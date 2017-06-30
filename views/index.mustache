@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home | Hangman.com</title>
+</head>
+
+<body>
+    <h1>Welcome to Hangman</h1>
+    <br>
+    <h2>Guess a letter to reveal the hidden word below.</h2>
+    <br>
+    <h2>Mystery Word:</h2>
+    {{#WordToGuess}}
+    <span><strong>{{.}}</strong></span> {{/WordToGuess}}
+    <br>
+    <br>
+    <div class="form-area">
+        <form class="input-form">
+            <input action="/" name="guess" method="post" placeholder="Enter a letter..."></input><button type="submit">Guess</button>
+        </form>
+    </div>
+    <h2>Letters guessed:</h2>
+    <br> {{#guessesleft}}
+    <h2>You have {{.}} guesses left.</h2>
+    {{/guessesleft}}
+</body>
+
+</html>
