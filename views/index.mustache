@@ -13,18 +13,25 @@
     <br>
     <h2>Mystery Word:</h2>
     {{#WordToGuess}}
-    <span><strong>{{.}}</strong></span> {{/WordToGuess}}
+      <span><strong>{{.}}</strong></span>
+    {{/WordToGuess}}
     <br>
     <br>
     <div class="form-area">
-        <form class="input-form">
-            <input action="/" name="guess" method="post" placeholder="Enter a letter..."></input><button type="submit">Guess</button>
+        <form action="/" method="post" class="input-form">
+            <input  name="guess" placeholder="Enter a letter..."></input><button type="submit">Guess</button>
         </form>
     </div>
     <h2>Letters guessed:</h2>
-    <br> {{#guessesleft}}
-    <h2>You have {{.}} guesses left.</h2>
-    {{/guessesleft}}
+    {{#spentLetters}}
+      <span><strong>{{.}}</strong></span>
+    {{/spentLetters}}
+    <br> {{#guessesLeft}}
+      <h2>You have {{.}} guesses left.</h2>
+    {{/guessesLeft}}
+    <br> {{#errors}}
+      <h2>{{.}}</h2>
+    {{/errors}}
 </body>
 
 </html>
